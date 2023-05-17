@@ -1,7 +1,10 @@
 import 'package:another_flushbar/flushbar_helper.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:yarab/application/auth/sign_in_form/sign_form_bloc.dart';
+
+import '../../routes/router.gr.dart';
 
 class SignInFrom extends StatelessWidget {
   const SignInFrom({super.key});
@@ -36,7 +39,7 @@ class SignInFrom extends StatelessWidget {
       builder: (context, state) {
         return Form(
           autovalidateMode: (state.showErrors)
-              ? AutovalidateMode.onUserInteraction
+              ? AutovalidateMode.always
               : AutovalidateMode.disabled,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -124,6 +127,25 @@ class SignInFrom extends StatelessWidget {
                     ),
                   ),
                 ),
+                const SizedBox(
+                  height: 15,
+                ),
+                GestureDetector(
+                  onTap: () => {context.pushRoute(const CreateAccountRoute())},
+                  child: Container(
+                    padding: const EdgeInsets.all(15),
+                    margin: const EdgeInsets.symmetric(horizontal: 117),
+                    decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(30))),
+                    child: const Center(
+                      child: Text(
+                        "Click here to register",
+                        style: TextStyle(
+                            color: Colors.blue, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                )
               ],
             ),
           ),

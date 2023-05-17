@@ -30,6 +30,38 @@ class ApiCalls {
     }
   }
 
+  Future<void> createUser({
+    required String emailAddress,
+    required String password,
+    required String username,
+    required String firstName,
+    required String lastName,
+  }) async {
+    final response = await http.post(
+      Uri.parse('http://localhost:8080/api/um/v1/users/create'),
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      encoding: Encoding.getByName('utf-8'),
+      body: {
+        "username": username,
+        "email": emailAddress,
+        "firstName": firstName,
+        "lastName": lastName,
+        "password": password,
+        "roles": ["USER"]
+      },
+    );
+
+    if (response.statusCode == 200) {
+      await login(emailAddress: emailAddress, password: password);
+    } else if (response.statusCode == 403) {
+      throw InvalidEmailAndPasswordExc();
+    } else {
+      throw ServerException();
+    }
+  }
+
   Future<void> authStatus() async {
     final token = await storage.read(key: "jwt");
     final response = await http.get(
@@ -42,7 +74,6 @@ class ApiCalls {
     );
 
     if (response.statusCode == 200) {
-      
     } else if (response.statusCode == 403) {
       throw TokenExpiredException();
     } else {

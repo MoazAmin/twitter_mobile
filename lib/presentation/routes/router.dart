@@ -10,6 +10,7 @@ class Router_ extends $Router_ {
         /// routes go here
         AutoRoute(page: SplashRoute.page, initial: true),
         AutoRoute(page: SignInRoute.page),
+        AutoRoute(page: CreateAccountRoute.page),
         AutoRoute(page: NavigationRoute.page),
 
 

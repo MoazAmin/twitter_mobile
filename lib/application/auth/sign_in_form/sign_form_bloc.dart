@@ -16,7 +16,6 @@ class SignFormBloc extends Bloc<SignFormEvent, SignFormState> {
   SignFormBloc(this._authFacade) : super(SignFormState.initial()) {
     on<EmailChanged>(_emailChanged);
     on<PasswordChanged>(_passwordChanged);
-    on<RegisterWithEmailAndPassword>(_register);
     on<SignInWithEmailAndPassword>(_signIn);
   }
 
@@ -32,26 +31,6 @@ class SignFormBloc extends Bloc<SignFormEvent, SignFormState> {
     emit(
       state.copyWith(password: passwordStr, authFailureOrSuccess: none()),
     );
-  }
-
-  void _register(
-      RegisterWithEmailAndPassword event, Emitter<SignFormState> emit) async {
-    Either<IAuthFailures, Unit>? failureOrSuccess;
-    if (state.emailAddress.isValid() && state.password.isValid()) {
-      emit(state.copyWith(
-        isSubmitting: true,
-        authFailureOrSuccess: none(),
-      ));
-      failureOrSuccess = await _authFacade.registerWithEmailAndPassword(
-        emailAddress: state.emailAddress,
-        password: state.password,
-      );
-    }
-    emit(state.copyWith(
-      showErrors: false,
-      isSubmitting: false,
-      authFailureOrSuccess: optionOf(failureOrSuccess),
-    ));
   }
 
   void _signIn(

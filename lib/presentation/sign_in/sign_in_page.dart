@@ -6,7 +6,7 @@ import 'package:yarab/application/auth/sign_in_form/sign_form_bloc.dart';
 import 'package:yarab/injection.dart';
 import 'package:yarab/presentation/sign_in/widgets/sign_in_form.dart';
 
-@RoutePage() 
+@RoutePage()
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});
 
@@ -14,6 +14,7 @@ class SignInPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Icon(FontAwesomeIcons.twitter),
       ),
       body: BlocProvider(

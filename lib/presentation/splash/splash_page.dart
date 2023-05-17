@@ -23,7 +23,8 @@ class SplashPage extends StatelessWidget {
             context.pushRoute(const NavigationRoute());
           },
           unauthenticated: (_) {
-            context.pushRoute(const SignInRoute());
+            // context.pushRoute(const SignInRoute());
+            context.pushRoute(const NavigationRoute());
           },
         );
       },

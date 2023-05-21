@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$CreateFormEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String firstStr) userNameChanged,
+    required TResult Function(String username) userNameChanged,
     required TResult Function(String firstStr) firstNameChanged,
     required TResult Function(String lastStr) lastNameChanged,
     required TResult Function(String emailStr) emailChanged,
@@ -28,7 +28,7 @@ mixin _$CreateFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String firstStr)? userNameChanged,
+    TResult? Function(String username)? userNameChanged,
     TResult? Function(String firstStr)? firstNameChanged,
     TResult? Function(String lastStr)? lastNameChanged,
     TResult? Function(String emailStr)? emailChanged,
@@ -38,7 +38,7 @@ mixin _$CreateFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String firstStr)? userNameChanged,
+    TResult Function(String username)? userNameChanged,
     TResult Function(String firstStr)? firstNameChanged,
     TResult Function(String lastStr)? lastNameChanged,
     TResult Function(String emailStr)? emailChanged,
@@ -104,7 +104,7 @@ abstract class _$$UserNameChangedCopyWith<$Res> {
           _$UserNameChanged value, $Res Function(_$UserNameChanged) then) =
       __$$UserNameChangedCopyWithImpl<$Res>;
   @useResult
-  $Res call({String firstStr});
+  $Res call({String username});
 }
 
 /// @nodoc
@@ -118,12 +118,12 @@ class __$$UserNameChangedCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? firstStr = null,
+    Object? username = null,
   }) {
     return _then(_$UserNameChanged(
-      null == firstStr
-          ? _value.firstStr
-          : firstStr // ignore: cast_nullable_to_non_nullable
+      null == username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -132,14 +132,14 @@ class __$$UserNameChangedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UserNameChanged implements UserNameChanged {
-  const _$UserNameChanged(this.firstStr);
+  const _$UserNameChanged(this.username);
 
   @override
-  final String firstStr;
+  final String username;
 
   @override
   String toString() {
-    return 'CreateFormEvent.userNameChanged(firstStr: $firstStr)';
+    return 'CreateFormEvent.userNameChanged(username: $username)';
   }
 
   @override
@@ -147,12 +147,12 @@ class _$UserNameChanged implements UserNameChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserNameChanged &&
-            (identical(other.firstStr, firstStr) ||
-                other.firstStr == firstStr));
+            (identical(other.username, username) ||
+                other.username == username));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, firstStr);
+  int get hashCode => Object.hash(runtimeType, username);
 
   @JsonKey(ignore: true)
   @override
@@ -163,33 +163,33 @@ class _$UserNameChanged implements UserNameChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String firstStr) userNameChanged,
+    required TResult Function(String username) userNameChanged,
     required TResult Function(String firstStr) firstNameChanged,
     required TResult Function(String lastStr) lastNameChanged,
     required TResult Function(String emailStr) emailChanged,
     required TResult Function(String passStr) passwordChanged,
     required TResult Function() registerUser,
   }) {
-    return userNameChanged(firstStr);
+    return userNameChanged(username);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String firstStr)? userNameChanged,
+    TResult? Function(String username)? userNameChanged,
     TResult? Function(String firstStr)? firstNameChanged,
     TResult? Function(String lastStr)? lastNameChanged,
     TResult? Function(String emailStr)? emailChanged,
     TResult? Function(String passStr)? passwordChanged,
     TResult? Function()? registerUser,
   }) {
-    return userNameChanged?.call(firstStr);
+    return userNameChanged?.call(username);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String firstStr)? userNameChanged,
+    TResult Function(String username)? userNameChanged,
     TResult Function(String firstStr)? firstNameChanged,
     TResult Function(String lastStr)? lastNameChanged,
     TResult Function(String emailStr)? emailChanged,
@@ -198,7 +198,7 @@ class _$UserNameChanged implements UserNameChanged {
     required TResult orElse(),
   }) {
     if (userNameChanged != null) {
-      return userNameChanged(firstStr);
+      return userNameChanged(username);
     }
     return orElse();
   }
@@ -248,9 +248,9 @@ class _$UserNameChanged implements UserNameChanged {
 }
 
 abstract class UserNameChanged implements CreateFormEvent {
-  const factory UserNameChanged(final String firstStr) = _$UserNameChanged;
+  const factory UserNameChanged(final String username) = _$UserNameChanged;
 
-  String get firstStr;
+  String get username;
   @JsonKey(ignore: true)
   _$$UserNameChangedCopyWith<_$UserNameChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -321,7 +321,7 @@ class _$FirstNameChanged implements FirstNameChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String firstStr) userNameChanged,
+    required TResult Function(String username) userNameChanged,
     required TResult Function(String firstStr) firstNameChanged,
     required TResult Function(String lastStr) lastNameChanged,
     required TResult Function(String emailStr) emailChanged,
@@ -334,7 +334,7 @@ class _$FirstNameChanged implements FirstNameChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String firstStr)? userNameChanged,
+    TResult? Function(String username)? userNameChanged,
     TResult? Function(String firstStr)? firstNameChanged,
     TResult? Function(String lastStr)? lastNameChanged,
     TResult? Function(String emailStr)? emailChanged,
@@ -347,7 +347,7 @@ class _$FirstNameChanged implements FirstNameChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String firstStr)? userNameChanged,
+    TResult Function(String username)? userNameChanged,
     TResult Function(String firstStr)? firstNameChanged,
     TResult Function(String lastStr)? lastNameChanged,
     TResult Function(String emailStr)? emailChanged,
@@ -478,7 +478,7 @@ class _$LastNameChanged implements LastNameChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String firstStr) userNameChanged,
+    required TResult Function(String username) userNameChanged,
     required TResult Function(String firstStr) firstNameChanged,
     required TResult Function(String lastStr) lastNameChanged,
     required TResult Function(String emailStr) emailChanged,
@@ -491,7 +491,7 @@ class _$LastNameChanged implements LastNameChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String firstStr)? userNameChanged,
+    TResult? Function(String username)? userNameChanged,
     TResult? Function(String firstStr)? firstNameChanged,
     TResult? Function(String lastStr)? lastNameChanged,
     TResult? Function(String emailStr)? emailChanged,
@@ -504,7 +504,7 @@ class _$LastNameChanged implements LastNameChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String firstStr)? userNameChanged,
+    TResult Function(String username)? userNameChanged,
     TResult Function(String firstStr)? firstNameChanged,
     TResult Function(String lastStr)? lastNameChanged,
     TResult Function(String emailStr)? emailChanged,
@@ -636,7 +636,7 @@ class _$EmailChanged implements EmailChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String firstStr) userNameChanged,
+    required TResult Function(String username) userNameChanged,
     required TResult Function(String firstStr) firstNameChanged,
     required TResult Function(String lastStr) lastNameChanged,
     required TResult Function(String emailStr) emailChanged,
@@ -649,7 +649,7 @@ class _$EmailChanged implements EmailChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String firstStr)? userNameChanged,
+    TResult? Function(String username)? userNameChanged,
     TResult? Function(String firstStr)? firstNameChanged,
     TResult? Function(String lastStr)? lastNameChanged,
     TResult? Function(String emailStr)? emailChanged,
@@ -662,7 +662,7 @@ class _$EmailChanged implements EmailChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String firstStr)? userNameChanged,
+    TResult Function(String username)? userNameChanged,
     TResult Function(String firstStr)? firstNameChanged,
     TResult Function(String lastStr)? lastNameChanged,
     TResult Function(String emailStr)? emailChanged,
@@ -793,7 +793,7 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String firstStr) userNameChanged,
+    required TResult Function(String username) userNameChanged,
     required TResult Function(String firstStr) firstNameChanged,
     required TResult Function(String lastStr) lastNameChanged,
     required TResult Function(String emailStr) emailChanged,
@@ -806,7 +806,7 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String firstStr)? userNameChanged,
+    TResult? Function(String username)? userNameChanged,
     TResult? Function(String firstStr)? firstNameChanged,
     TResult? Function(String lastStr)? lastNameChanged,
     TResult? Function(String emailStr)? emailChanged,
@@ -819,7 +819,7 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String firstStr)? userNameChanged,
+    TResult Function(String username)? userNameChanged,
     TResult Function(String firstStr)? firstNameChanged,
     TResult Function(String lastStr)? lastNameChanged,
     TResult Function(String emailStr)? emailChanged,
@@ -924,7 +924,7 @@ class _$RegisterUser implements RegisterUser {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String firstStr) userNameChanged,
+    required TResult Function(String username) userNameChanged,
     required TResult Function(String firstStr) firstNameChanged,
     required TResult Function(String lastStr) lastNameChanged,
     required TResult Function(String emailStr) emailChanged,
@@ -937,7 +937,7 @@ class _$RegisterUser implements RegisterUser {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String firstStr)? userNameChanged,
+    TResult? Function(String username)? userNameChanged,
     TResult? Function(String firstStr)? firstNameChanged,
     TResult? Function(String lastStr)? lastNameChanged,
     TResult? Function(String emailStr)? emailChanged,
@@ -950,7 +950,7 @@ class _$RegisterUser implements RegisterUser {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String firstStr)? userNameChanged,
+    TResult Function(String username)? userNameChanged,
     TResult Function(String firstStr)? firstNameChanged,
     TResult Function(String lastStr)? lastNameChanged,
     TResult Function(String emailStr)? emailChanged,
@@ -1014,14 +1014,16 @@ abstract class RegisterUser implements CreateFormEvent {
 
 /// @nodoc
 mixin _$CreateFormState {
-  Name get username => throw _privateConstructorUsedError;
+  Username get username => throw _privateConstructorUsedError;
   Name get firstName => throw _privateConstructorUsedError;
   Name get lastName => throw _privateConstructorUsedError;
   EmailAddress get emailAddress => throw _privateConstructorUsedError;
   Password get password => throw _privateConstructorUsedError;
   bool get showErrors => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
-  Option<Either<IAuthFailures, Unit>> get authFailureOrSuccess =>
+  Option<Either<IAuthFailures, bool>> get usernameTaken =>
+      throw _privateConstructorUsedError;
+  Option<Either<IAuthFailures, Unit>> get createFailureOrSuccess =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -1036,14 +1038,15 @@ abstract class $CreateFormStateCopyWith<$Res> {
       _$CreateFormStateCopyWithImpl<$Res, CreateFormState>;
   @useResult
   $Res call(
-      {Name username,
+      {Username username,
       Name firstName,
       Name lastName,
       EmailAddress emailAddress,
       Password password,
       bool showErrors,
       bool isSubmitting,
-      Option<Either<IAuthFailures, Unit>> authFailureOrSuccess});
+      Option<Either<IAuthFailures, bool>> usernameTaken,
+      Option<Either<IAuthFailures, Unit>> createFailureOrSuccess});
 }
 
 /// @nodoc
@@ -1066,13 +1069,14 @@ class _$CreateFormStateCopyWithImpl<$Res, $Val extends CreateFormState>
     Object? password = null,
     Object? showErrors = null,
     Object? isSubmitting = null,
-    Object? authFailureOrSuccess = null,
+    Object? usernameTaken = null,
+    Object? createFailureOrSuccess = null,
   }) {
     return _then(_value.copyWith(
       username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
-              as Name,
+              as Username,
       firstName: null == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
@@ -1097,9 +1101,13 @@ class _$CreateFormStateCopyWithImpl<$Res, $Val extends CreateFormState>
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
               as bool,
-      authFailureOrSuccess: null == authFailureOrSuccess
-          ? _value.authFailureOrSuccess
-          : authFailureOrSuccess // ignore: cast_nullable_to_non_nullable
+      usernameTaken: null == usernameTaken
+          ? _value.usernameTaken
+          : usernameTaken // ignore: cast_nullable_to_non_nullable
+              as Option<Either<IAuthFailures, bool>>,
+      createFailureOrSuccess: null == createFailureOrSuccess
+          ? _value.createFailureOrSuccess
+          : createFailureOrSuccess // ignore: cast_nullable_to_non_nullable
               as Option<Either<IAuthFailures, Unit>>,
     ) as $Val);
   }
@@ -1114,14 +1122,15 @@ abstract class _$$_CreateFormStateCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {Name username,
+      {Username username,
       Name firstName,
       Name lastName,
       EmailAddress emailAddress,
       Password password,
       bool showErrors,
       bool isSubmitting,
-      Option<Either<IAuthFailures, Unit>> authFailureOrSuccess});
+      Option<Either<IAuthFailures, bool>> usernameTaken,
+      Option<Either<IAuthFailures, Unit>> createFailureOrSuccess});
 }
 
 /// @nodoc
@@ -1142,13 +1151,14 @@ class __$$_CreateFormStateCopyWithImpl<$Res>
     Object? password = null,
     Object? showErrors = null,
     Object? isSubmitting = null,
-    Object? authFailureOrSuccess = null,
+    Object? usernameTaken = null,
+    Object? createFailureOrSuccess = null,
   }) {
     return _then(_$_CreateFormState(
       username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
-              as Name,
+              as Username,
       firstName: null == firstName
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
@@ -1173,9 +1183,13 @@ class __$$_CreateFormStateCopyWithImpl<$Res>
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
               as bool,
-      authFailureOrSuccess: null == authFailureOrSuccess
-          ? _value.authFailureOrSuccess
-          : authFailureOrSuccess // ignore: cast_nullable_to_non_nullable
+      usernameTaken: null == usernameTaken
+          ? _value.usernameTaken
+          : usernameTaken // ignore: cast_nullable_to_non_nullable
+              as Option<Either<IAuthFailures, bool>>,
+      createFailureOrSuccess: null == createFailureOrSuccess
+          ? _value.createFailureOrSuccess
+          : createFailureOrSuccess // ignore: cast_nullable_to_non_nullable
               as Option<Either<IAuthFailures, Unit>>,
     ));
   }
@@ -1192,10 +1206,11 @@ class _$_CreateFormState implements _CreateFormState {
       required this.password,
       required this.showErrors,
       required this.isSubmitting,
-      required this.authFailureOrSuccess});
+      required this.usernameTaken,
+      required this.createFailureOrSuccess});
 
   @override
-  final Name username;
+  final Username username;
   @override
   final Name firstName;
   @override
@@ -1209,11 +1224,13 @@ class _$_CreateFormState implements _CreateFormState {
   @override
   final bool isSubmitting;
   @override
-  final Option<Either<IAuthFailures, Unit>> authFailureOrSuccess;
+  final Option<Either<IAuthFailures, bool>> usernameTaken;
+  @override
+  final Option<Either<IAuthFailures, Unit>> createFailureOrSuccess;
 
   @override
   String toString() {
-    return 'CreateFormState(username: $username, firstName: $firstName, lastName: $lastName, emailAddress: $emailAddress, password: $password, showErrors: $showErrors, isSubmitting: $isSubmitting, authFailureOrSuccess: $authFailureOrSuccess)';
+    return 'CreateFormState(username: $username, firstName: $firstName, lastName: $lastName, emailAddress: $emailAddress, password: $password, showErrors: $showErrors, isSubmitting: $isSubmitting, usernameTaken: $usernameTaken, createFailureOrSuccess: $createFailureOrSuccess)';
   }
 
   @override
@@ -1235,13 +1252,24 @@ class _$_CreateFormState implements _CreateFormState {
                 other.showErrors == showErrors) &&
             (identical(other.isSubmitting, isSubmitting) ||
                 other.isSubmitting == isSubmitting) &&
-            (identical(other.authFailureOrSuccess, authFailureOrSuccess) ||
-                other.authFailureOrSuccess == authFailureOrSuccess));
+            (identical(other.usernameTaken, usernameTaken) ||
+                other.usernameTaken == usernameTaken) &&
+            (identical(other.createFailureOrSuccess, createFailureOrSuccess) ||
+                other.createFailureOrSuccess == createFailureOrSuccess));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, username, firstName, lastName,
-      emailAddress, password, showErrors, isSubmitting, authFailureOrSuccess);
+  int get hashCode => Object.hash(
+      runtimeType,
+      username,
+      firstName,
+      lastName,
+      emailAddress,
+      password,
+      showErrors,
+      isSubmitting,
+      usernameTaken,
+      createFailureOrSuccess);
 
   @JsonKey(ignore: true)
   @override
@@ -1252,18 +1280,19 @@ class _$_CreateFormState implements _CreateFormState {
 
 abstract class _CreateFormState implements CreateFormState {
   const factory _CreateFormState(
-      {required final Name username,
+      {required final Username username,
       required final Name firstName,
       required final Name lastName,
       required final EmailAddress emailAddress,
       required final Password password,
       required final bool showErrors,
       required final bool isSubmitting,
+      required final Option<Either<IAuthFailures, bool>> usernameTaken,
       required final Option<Either<IAuthFailures, Unit>>
-          authFailureOrSuccess}) = _$_CreateFormState;
+          createFailureOrSuccess}) = _$_CreateFormState;
 
   @override
-  Name get username;
+  Username get username;
   @override
   Name get firstName;
   @override
@@ -1277,7 +1306,9 @@ abstract class _CreateFormState implements CreateFormState {
   @override
   bool get isSubmitting;
   @override
-  Option<Either<IAuthFailures, Unit>> get authFailureOrSuccess;
+  Option<Either<IAuthFailures, bool>> get usernameTaken;
+  @override
+  Option<Either<IAuthFailures, Unit>> get createFailureOrSuccess;
   @override
   @JsonKey(ignore: true)
   _$$_CreateFormStateCopyWith<_$_CreateFormState> get copyWith =>

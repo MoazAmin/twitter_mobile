@@ -12,7 +12,7 @@ class SpringAuthFacade implements IAuthFacade {
 
   @override
   Future<Either<IAuthFailures, Unit>> registerWithEmailAndPassword({
-    required Name username,
+    required Username username,
     required Name firstName,
     required Name lastName,
     required EmailAddress emailAddress,
@@ -71,5 +71,31 @@ class SpringAuthFacade implements IAuthFacade {
   @override
   Future<void> signOut() async {
     _apiCalls.signOut();
+  }
+
+//if false then not taken
+  @override
+  Future<Either<IAuthFailures, bool>> checkUsername(
+      {required Username userName}) async {
+    final user = userName.getOrCrash();
+    try {
+      final result = await _apiCalls.checkUserName(userName: user);
+      return right(result);
+    } catch (e) {
+      return left(const IAuthFailures.serverError());
+    }
+  }
+
+  @override
+  Future<Either<IAuthFailures, bool>> checkEmail({
+    required EmailAddressRegister emailAddressRegister,
+  }) async {
+    final email = emailAddressRegister.getOrCrash();
+    try {
+      final result = await _apiCalls.checkEmail(email);
+      return right(result);
+    } catch (e) {
+      return left(const IAuthFailures.serverError());
+    }
   }
 }

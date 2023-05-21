@@ -6,6 +6,8 @@ import 'package:yarab/application/create_from/create_form_bloc.dart';
 import 'package:yarab/injection.dart';
 import 'package:yarab/presentation/create_account/create_account_form.dart';
 
+import '../../application/create_from/username_email_validity_bloc/email_username_validity_bloc.dart';
+
 @RoutePage()
 class CreateAccountPage extends StatelessWidget {
   const CreateAccountPage({super.key});
@@ -18,8 +20,15 @@ class CreateAccountPage extends StatelessWidget {
           FontAwesomeIcons.twitter,
         ),
       ),
-      body: BlocProvider(
-        create: (_) => getIt<CreateFormBloc>(),
+      body: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (_) => getIt<CreateFormBloc>(),
+          ),
+          BlocProvider(
+            create: (_) => getIt<EmailUsernameValidityBloc>(),
+          ),
+        ],
         child: const CreateAccountForm(),
       ),
     );

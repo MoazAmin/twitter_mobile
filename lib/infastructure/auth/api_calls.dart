@@ -84,6 +84,47 @@ class ApiCalls {
   Future<void> signOut() async {
     await storage.write(key: "jwt", value: '');
   }
+
+  Future<bool> checkUserName({required String userName}) async {
+    final msg = jsonEncode({"username": userName});
+    final response = await http.post(
+      Uri.parse('http://localhost:8080/api/um/v1/users/username'),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      encoding: Encoding.getByName('utf-8'),
+      body: msg,
+    );
+    if (response.statusCode == 200) {
+      return true;
+    } else if (response.statusCode == 400) {
+      return false;
+    } else {
+      throw ServerException();
+    }
+  }
+
+  Future<bool> checkEmail(String email) async {
+    final msg = jsonEncode({
+      "email": email,
+    });
+
+    final response = await http.post(
+      Uri.parse('http://localhost:8080/api/um/v1/users/username'),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      encoding: Encoding.getByName('utf-8'),
+      body: msg,
+    );
+    if (response.statusCode == 200) {
+      return true;
+    } else if (response.statusCode == 400) {
+      return false;
+    } else {
+      throw ServerException();
+    }
+  }
 }
 
 class InvalidEmailAndPasswordExc implements Exception {}
@@ -91,3 +132,5 @@ class InvalidEmailAndPasswordExc implements Exception {}
 class ServerException implements Exception {}
 
 class TokenExpiredException implements Exception {}
+
+class Takenxception implements Exception {}

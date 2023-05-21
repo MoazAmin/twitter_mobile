@@ -15,6 +15,8 @@ import 'package:injectable/injectable.dart' as _i2;
 import 'application/auth/auth_bloc/auth_bloc.dart' as _i7;
 import 'application/auth/sign_in_form/sign_form_bloc.dart' as _i6;
 import 'application/create_from/create_form_bloc.dart' as _i8;
+import 'application/create_from/username_email_validity_bloc/email_username_validity_bloc.dart'
+    as _i9;
 import 'domain/auth/i_auth_facade.dart' as _i4;
 import 'infastructure/auth/api_calls.dart' as _i3;
 import 'infastructure/auth/spring_auth_facade.dart' as _i5;
@@ -37,6 +39,8 @@ extension GetItInjectableX on _i1.GetIt {
     gh.factory<_i7.AuthBloc>(() => _i7.AuthBloc(gh<_i4.IAuthFacade>()));
     gh.factory<_i8.CreateFormBloc>(
         () => _i8.CreateFormBloc(gh<_i4.IAuthFacade>()));
+    gh.factory<_i9.EmailUsernameValidityBloc>(
+        () => _i9.EmailUsernameValidityBloc(gh<_i4.IAuthFacade>()));
     return this;
   }
 }
